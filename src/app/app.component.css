@@ -1,0 +1,56 @@
+* {
+  color: #eee;
+}
+.bg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.work-space {
+    border-radius: 10px;
+  width: 325px;
+  background: #344d67;
+  margin: 1%;
+}
+h1,
+h3 {
+  text-align: center;
+}
+h3 {
+  color: #344d67;
+}
+
+.img-card {
+  text-align: center;
+}
+.img-card > img {
+  border-radius: 15px;
+  width: 275px;
+  height: 120px;
+}
+.card {
+  clear: both;
+  background: #ade792;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.user {
+  float: right;
+}
+.date {
+  float: left;
+}
+.u-d {
+margin: 30px;
+  
+}
+.img-user{
+    display: flex;
+    flex-direction: row;
+    border-radius: 50%;
+    height: 55px;
+    margin-right: 5px;
+
+}
