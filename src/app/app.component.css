@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .work-space {
-    border-radius: 10px;
+  border-radius: 10px;
   width: 325px;
   background: #344d67;
   margin: 1%;
@@ -33,7 +33,7 @@ h3 {
   background: #ade792;
   padding: 5px;
   margin: 5px;
-  border-radius: 25px;
+  border-radius: 25px 25px 10px 10px;
   overflow: hidden;
 }
 .user {
@@ -41,16 +41,22 @@ h3 {
 }
 .date {
   float: left;
-}
-.u-d {
-margin: 30px;
+  padding: 7px 15px 7px 15px;
+  background: #beafea;
+  border-radius: 50px;
   
 }
-.img-user{
-    display: flex;
-    flex-direction: row;
-    border-radius: 50%;
-    height: 55px;
-    margin-right: 5px;
+.u-d {
+  margin: 0 30px 0 30px;
+
 
 }
+.img-user {
+  display: flex;
+  flex-direction: row;
+  border-radius: 50%;
+  height: 55px;
+  margin-right: 5px;
+}
+
+

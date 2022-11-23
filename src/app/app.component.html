@@ -1,15 +1,25 @@
 <div class="bg">
   <div class="work-space">
-    <h1>pendiente</h1>
+    <h1>Pendientes</h1>
     <div *ngFor="let eq of tareas">
       <div class="card" *ngIf="eq.lista == 'Pendientes'">
         <p class="img-card" *ngIf="eq.img !== null">
           <img src="{{ eq.img }} " alt="image" />
         </p>
-        <h3>{{ eq.titulo }}</h3>
+
+        <h3>
+          {{ eq.titulo }}
+         </h3>
+
         <div class="u-d">
-          <p class="user">{{ eq.usuarios }}</p>
-          <p class="date">{{ eq.fechaFin }}</p>
+          <div class="date" *ngIf="eq.fechaFin !== null">
+            {{ eq.fechaFin }}
+          </div>
+          <span *ngFor="let usuario of eq.usuarios">
+            <div class="user" *ngIf="eq.img !== null">
+              <img class="img-user" [src]="usuario.img" alt="image" />
+            </div>
+          </span>
         </div>
       </div>
     </div>
@@ -22,16 +32,23 @@
         <p class="img-card" *ngIf="eq.img !== null">
           <img src="{{ eq.img }} " alt="image" />
         </p>
+
         <h3>{{ eq.titulo }}</h3>
+
         <div class="u-d">
-          <p class="user">{{ eq.usuarios }}</p>
-          <p class="date">{{ eq.fechaFin }}</p>
+          <div class="date" *ngIf="eq.fechaFin !== null">
+            {{ eq.fechaFin }}
+          </div>
+          <span *ngFor="let usuario of eq.usuarios">
+            <div class="user" *ngIf="eq.img !== null">
+              <img class="img-user" [src]="usuario.img" alt="image" />
+            </div>
+          </span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- el mas correcto para copiar -->
   <div class="work-space">
     <h1>Finalizadas</h1>
     <div *ngFor="let eq of tareas">
@@ -43,17 +60,14 @@
         <h3>{{ eq.titulo }}</h3>
 
         <div class="u-d">
-          <p class="date">{{ eq.fechaFin }}</p>
-          <span *ngFor="let index of eq.usuarios"> <!-- TODO: hacer que esto funcione que recorra el array y que no solo muestre el 0 -->
-            <p class="user" *ngIf="eq.img !== null">
-                <img
-                  class="img-user"
-                  src="{{ eq.usuarios[0]['img']}}"
-                  alt="image"
-                />
-              </p>
+          <div class="date" *ngIf="eq.fechaFin !== null">
+            {{ eq.fechaFin }}
+          </div>
+          <span *ngFor="let usuario of eq.usuarios">
+            <div class="user" *ngIf="eq.img !== null">
+              <img class="img-user" [src]="usuario.img" alt="image" />
+            </div>
           </span>
-          
         </div>
       </div>
     </div>

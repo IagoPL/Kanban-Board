@@ -23,11 +23,6 @@ export class AppComponent {
           "titulo": "Tarea 1: Diseño UI",
           "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}],
           "fechaFin": "2019-01-16" },
-        { "lista": "${k_FINALIZADAS_LISTA}", 
-          "img": "https://picsum.photos/300/200",
-          "titulo": "esta tarjeta es falsa",
-          "usuarios":[{"img": "https://picsum.photos/300/300", "alt": "Usuario"}, {"img": "https://picsum.photos/300/250", "alt": "Usuario"}],
-          "fechaFin": "2019-01-16" },
         
         { "lista": "${k_PROGRESO_LISTA}", 
           "img": "https://picsum.photos/300/200", 
