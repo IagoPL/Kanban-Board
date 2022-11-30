@@ -14,6 +14,7 @@ export class AppComponent {
 
   listas: string[] = [];
   tareas: Tarea[];
+  
 
   constructor() {
     const tareasJSON: string = `{
@@ -29,6 +30,8 @@ export class AppComponent {
           "titulo": "Tarea 2: Diseño de todo el Backend", 
           "usuarios": [], 
           "fechaFin": "2022-11-09" },
+          
+          
         
         { "lista": "${k_PENDIENTES_LISTA}", 
           "img": null, 
@@ -50,5 +53,9 @@ export class AppComponent {
     this.listas.push(k_PENDIENTES_LISTA);
     this.listas.push(k_PROGRESO_LISTA);
     this.listas.push(k_FINALIZADAS_LISTA);
+
+    compareDate(params:string) {
+      
+    }
   }
 }
