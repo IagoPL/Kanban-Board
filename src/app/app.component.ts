@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
 import { Tarea } from './models/tarea-model';
 
-const k_PENDIENTES_LISTA: string = "Pendientes";
-const k_PROGRESO_LISTA: string = "Progreso";
-const k_FINALIZADAS_LISTA: string = "Finalizadas";
+const k_PENDIENTES_LISTA: string = 'Pendientes';
+const k_PROGRESO_LISTA: string = 'Progreso';
+const k_FINALIZADAS_LISTA: string = 'Finalizadas';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
   listas: string[] = [];
   tareas: Tarea[];
-  
 
   constructor() {
     const tareasJSON: string = `{
@@ -30,6 +28,12 @@ export class AppComponent {
           "titulo": "Tarea 2: Diseño de todo el Backend", 
           "usuarios": [], 
           "fechaFin": "2022-11-09" },
+        
+        { "lista": "${k_PROGRESO_LISTA}", 
+          "img": "https://picsum.photos/300/200", 
+          "titulo": "Tarea 2: Diseño de todo el Backend", 
+          "usuarios": [], 
+          "fechaFin": "2022-11-09" },
           
           
         
@@ -37,7 +41,7 @@ export class AppComponent {
           "img": null, 
           "titulo": "Tarea 3: Diseño de la base de datos", 
           "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}, {"img": "https://picsum.photos/300/300", "alt": "Usuario"}], 
-          "fechaFin": "2022-11-16" },
+          "fechaFin": "2023-11-16" },
         
         { "lista": "${k_PENDIENTES_LISTA}", 
           "img": null, 
@@ -53,9 +57,17 @@ export class AppComponent {
     this.listas.push(k_PENDIENTES_LISTA);
     this.listas.push(k_PROGRESO_LISTA);
     this.listas.push(k_FINALIZADAS_LISTA);
+  }
 
-    compareDate(params:string) {
-      
+  compareDate(appointedTime: Date) {
+    let newDate = new Date(appointedTime);
+    let actualDate = new Date();
+    
+
+    if (newDate < actualDate) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

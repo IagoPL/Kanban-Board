@@ -12,8 +12,8 @@
         </h3>
 
         <div class="u-d">
-          <div class="date" *ngIf="eq.fechaFin !== null" [ngClass]="{caducate: compareDate(eq.fechaFin)}">
-            {{ eq.fechaFin }}
+          <div class="date" *ngIf="eq.fechaFin !== null" >
+            <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
           </div>
           <span *ngFor="let usuario of eq.usuarios">
             <div class="user" *ngIf="eq.img !== null">
@@ -38,8 +38,8 @@
         </h3>
 
         <div class="u-d">
-          <div class="date" *ngIf="eq.fechaFin !== null">
-            {{ eq.fechaFin }}
+          <div class="date" *ngIf="eq.fechaFin !== null" >
+            <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
           </div>
           <span *ngFor="let usuario of eq.usuarios">
             <div class="user" *ngIf="eq.img !== null">
@@ -64,8 +64,8 @@
         </h3>
 
         <div class="u-d">
-          <div class="date" *ngIf="eq.fechaFin !== null">
-            {{ eq.fechaFin }}
+          <div class="date" *ngIf="eq.fechaFin !== null" >
+            <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
           </div>
           <span *ngFor="let usuario of eq.usuarios">
             <div class="user" *ngIf="eq.img !== null">
