@@ -48,7 +48,13 @@
                 </div>
                 <span *ngFor="let usuario of eq.usuarios">
                   <div class="user" *ngIf="eq.img !== null">
-                    <img class="img-user" [src]="usuario.img" alt="image" />
+
+                    <div class="tooltip top">
+                      <img class="img-user" [src]="usuario.img" alt="image" />
+                      
+                    </div>
+
+                    
                   </div>
                 </span>
               </div>

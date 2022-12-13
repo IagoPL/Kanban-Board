@@ -116,6 +116,7 @@ export class AppComponent {
     this.listas.push(k_FINALIZADAS_LISTA);
   }
   changeWindow(){
+
     return true;
   }
 
