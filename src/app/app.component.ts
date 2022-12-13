@@ -58,6 +58,9 @@ export class AppComponent {
     this.listas.push(k_PROGRESO_LISTA);
     this.listas.push(k_FINALIZADAS_LISTA);
   }
+  changeWindow(){
+    return true;
+  }
 
   compareDate(appointedTime: Date) {
     let newDate = new Date(appointedTime);

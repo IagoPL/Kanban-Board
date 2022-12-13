@@ -1,79 +1,93 @@
-<div class="bg">
-  <div class="work-space">
-    <h1>Pendientes</h1>
-    <div *ngFor="let eq of tareas">
-      <div class="card" *ngIf="eq.lista == 'Pendientes'">
-        <p class="img-card" *ngIf="eq.img !== null">
-          <img src="{{ eq.img }} " alt="image" />
-        </p>
+<ng-container *ngIf="changeWindow(); then loggedIn; else loggedOut">
+</ng-container>
 
-        <h3>
-          {{ eq.titulo }}
-        </h3>
-
-        <div class="u-d">
-          <div class="date" *ngIf="eq.fechaFin !== null" >
-            <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
-          </div>
-          <span *ngFor="let usuario of eq.usuarios">
-            <div class="user" *ngIf="eq.img !== null">
-              <img class="img-user" [src]="usuario.img" alt="image" />
+<ng-template #loggedIn>
+    <div>
+      <div class="bg">
+        <div class="work-space">
+          <h1>Pendientes</h1>
+          <div *ngFor="let eq of tareas">
+            <div class="card" *ngIf="eq.lista == 'Pendientes'">
+              <p class="img-card" *ngIf="eq.img !== null">
+                <img src="{{ eq.img }} " alt="image" />
+              </p>
+      
+              <h3>
+                {{ eq.titulo }}
+              </h3>
+      
+              <div class="u-d">
+                <div class="date" *ngIf="eq.fechaFin !== null" >
+                  <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
+                </div>
+                <span *ngFor="let usuario of eq.usuarios">
+                  <div class="user" *ngIf="eq.img !== null">
+                    <img class="img-user" [src]="usuario.img" alt="image" />
+                  </div>
+                </span>
+              </div>
             </div>
-          </span>
+          </div>
+        </div>
+      
+        <div class="work-space">
+          <h1>Progreso</h1>
+          <div *ngFor="let eq of tareas">
+            <div class="card" *ngIf="eq.lista == 'Progreso'">
+              <p class="img-card" *ngIf="eq.img !== null">
+                <img src="{{ eq.img }} " alt="image" />
+              </p>
+      
+              <h3>
+                {{ eq.titulo }}
+              </h3>
+      
+              <div class="u-d">
+                <div class="date" *ngIf="eq.fechaFin !== null" >
+                  <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
+                </div>
+                <span *ngFor="let usuario of eq.usuarios">
+                  <div class="user" *ngIf="eq.img !== null">
+                    <img class="img-user" [src]="usuario.img" alt="image" />
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="work-space">
+          <h1>Finalizadas</h1>
+          <div *ngFor="let eq of tareas">
+            <div class="card" *ngIf="eq.lista == 'Finalizadas'">
+              <p class="img-card" *ngIf="eq.img !== null">
+                <img src="{{ eq.img }} " alt="image" />
+              </p>
+      
+              <h3>
+                {{ eq.titulo }}
+              </h3>
+      
+              <div class="u-d">
+                <div class="date" *ngIf="eq.fechaFin !== null" >
+                  <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
+                </div>
+                <span *ngFor="let usuario of eq.usuarios">
+                  <div class="user" *ngIf="eq.img !== null">
+                    <img class="img-user" [src]="usuario.img" alt="image" />
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      
     </div>
-  </div>
-
-  <div class="work-space">
-    <h1>Progreso</h1>
-    <div *ngFor="let eq of tareas">
-      <div class="card" *ngIf="eq.lista == 'Progreso'">
-        <p class="img-card" *ngIf="eq.img !== null">
-          <img src="{{ eq.img }} " alt="image" />
-        </p>
-
-        <h3>
-          {{ eq.titulo }}
-        </h3>
-
-        <div class="u-d">
-          <div class="date" *ngIf="eq.fechaFin !== null" >
-            <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
-          </div>
-          <span *ngFor="let usuario of eq.usuarios">
-            <div class="user" *ngIf="eq.img !== null">
-              <img class="img-user" [src]="usuario.img" alt="image" />
-            </div>
-          </span>
-        </div>
-      </div>
+</ng-template>
+<ng-template #loggedOut>
+    <div>
+        <app-form></app-form>
     </div>
-  </div>
+</ng-template>
 
-  <div class="work-space">
-    <h1>Finalizadas</h1>
-    <div *ngFor="let eq of tareas">
-      <div class="card" *ngIf="eq.lista == 'Finalizadas'">
-        <p class="img-card" *ngIf="eq.img !== null">
-          <img src="{{ eq.img }} " alt="image" />
-        </p>
-
-        <h3>
-          {{ eq.titulo }}
-        </h3>
-
-        <div class="u-d">
-          <div class="date" *ngIf="eq.fechaFin !== null" >
-            <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
-          </div>
-          <span *ngFor="let usuario of eq.usuarios">
-            <div class="user" *ngIf="eq.img !== null">
-              <img class="img-user" [src]="usuario.img" alt="image" />
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
