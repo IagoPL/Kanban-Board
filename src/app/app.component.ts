@@ -5,6 +5,8 @@ const k_PENDIENTES_LISTA: string = 'Pendientes';
 const k_PROGRESO_LISTA: string = 'Progreso';
 const k_FINALIZADAS_LISTA: string = 'Finalizadas';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,8 +15,9 @@ const k_FINALIZADAS_LISTA: string = 'Finalizadas';
 export class AppComponent {
   listas: string[] = [];
   tareas: Tarea[];
-
+  flag: boolean = true;
   constructor() {
+    
     const tareasJSON2: string = `{
       "tareas": [
 
@@ -118,6 +121,13 @@ export class AppComponent {
   changeWindow(){
 
     return false;
+  }
+
+  showData() {
+    return (this.flag = true);
+  }
+  hideData() {
+    return (this.flag = false);
   }
 
   compareDate(appointedTime: Date) {
