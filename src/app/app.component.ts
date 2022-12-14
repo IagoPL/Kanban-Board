@@ -117,7 +117,7 @@ export class AppComponent {
   }
   changeWindow(){
 
-    return true;
+    return false;
   }
 
   compareDate(appointedTime: Date) {

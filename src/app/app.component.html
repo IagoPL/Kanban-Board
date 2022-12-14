@@ -79,7 +79,7 @@
                   <span [ngClass]="{cssClass: compareDate(eq.fechaFin)}">{{ eq.fechaFin }}</span>
                 </div>
                 <span *ngFor="let usuario of eq.usuarios">
-                  <div class="user" *ngIf="eq.img !== null">
+                  <div class="user" *ngIf="eq.img">
                     <img class="img-user" [src]="usuario.img" alt="image" />
                   </div>
                 </span>
