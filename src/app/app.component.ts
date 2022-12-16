@@ -5,8 +5,6 @@ const k_PENDIENTES_LISTA: string = 'Pendientes';
 const k_PROGRESO_LISTA: string = 'Progreso';
 const k_FINALIZADAS_LISTA: string = 'Finalizadas';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,8 +14,9 @@ export class AppComponent {
   listas: string[] = [];
   tareas: Tarea[];
   flag: boolean = true;
+  lastId: String = "";
+
   constructor() {
-    
     const tareasJSON2: string = `{
       "tareas": [
 
@@ -75,6 +74,8 @@ export class AppComponent {
 
       ]
       }`;
+
+      // este es la vieja version del json
     const tareasJSON: string = `{
       "tareas": [
         { "lista": "${k_FINALIZADAS_LISTA}", 
@@ -117,15 +118,42 @@ export class AppComponent {
     this.listas.push(k_PENDIENTES_LISTA);
     this.listas.push(k_PROGRESO_LISTA);
     this.listas.push(k_FINALIZADAS_LISTA);
-  }
-  changeWindow(){
 
-    return false;
+    this.initializeInstance(tareasDict);
   }
+
+  // cose el json en forma de array conprueba cual es la ultima entrada y devuelve el valor del ultimo id para poderlo usar
+  initializeInstance(array: String[]) {
+    for (let index = 0; index < array.length; index++) {
+      if (index + 1 == array.length) {
+        this.lastId = this.split(array[index]);
+      }
+    }
+    return 0;
+  }
+
+  // separa el String para conseguir el numero del id dentro del json
+  split(str: String) {
+    var newValue: String;
+    var array: String[];
+
+    array = str.split(',');
+    newValue = array[0];
+
+    array = newValue.split(':');
+    return array[1];
+
+    
+  }
+
+
+
+  // cambia el flag para que muestre un panel o otro
 
   showData() {
     return (this.flag = true);
   }
+  // cambia el flag para que muestre un panel o otro
   hideData() {
     return (this.flag = false);
   }
@@ -133,7 +161,6 @@ export class AppComponent {
   compareDate(appointedTime: Date) {
     let newDate = new Date(appointedTime);
     let actualDate = new Date();
-    
 
     if (newDate < actualDate) {
       return true;

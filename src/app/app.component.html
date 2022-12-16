@@ -1,5 +1,8 @@
 <div *ngIf="flag == false">
-  <app-form></app-form>
+  
+<!-- llamamos al componente usando un imput para pasarle el id mas ultimo id -->
+  <app-form [itemId]="lastId"></app-form>
+  
 </div>
 <div *ngIf="flag == true">
   <div>
